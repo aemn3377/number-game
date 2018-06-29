@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="jquery-3.2.1.min.js"  ></script>
+<style>
+table, th, td {
+    border:1px solid rgb(37, 4, 100) ;
+    text-align: center;}
+    
+
+</style>
+</head>
+<body>
+<div id="dd">
+ <table id="myTable" >
+  <tr>
+    <td><img src="face/b.png" id="img1" class="aaa"></td>
+    <td><img src="face/b.png" id="img2" class="aaa"></td>  
+    <td><img src="face/b.png" id="img3" class="aaa"></td>
+  </tr>
+  <tr>
+    <td><img src="face/b.png" id="img4" class="aaa"></td>
+    <td><img src="face/b.png" id="img5" class="aaa"></td>
+    <td><img src="face/b.png" id="img6" class="aaa"></td>
+  </tr>
+  <tr>
+    <td><img src="face/b.png" id="img7" class="aaa"></td>
+    <td><img src="face/b.png" id="img8" class="aaa"></td>
+    <td><img src="face/b.png" id="img9" class="aaa"></td>
+  </tr>
+  <tr>
+    <td><img src="face/b.png" id="img10" class="aaa"></td>
+    <td><img src="face/b.png" id="img11" class="aaa"></td>
+    <td><img src="face/b.png" id="img12" class="aaa"></td>
+  </tr>
+ </table>
+ <button id="bb">play</button>
+ </div>
+
+<script>
+ //تغير حجم القطاع والجدول مع تغير حجم النافذه
+    window.onresize =function(){
+    hh=window.innerHeight;
+    ww=window.innerWidth;
+    var g = document.getElementById("dd");
+    g.style.height=8*hh/10+"px";
+    g.style.width=6*ww/10+"px";
+    var ta = document.getElementById("myTable");
+    ta.style.width = "90%";
+    ta.style.height="90%";
+ //تعين حجم الخط داخل الجدول على حسب حجم النافذة
+     ta.style.fontSize=ww/50+"px"
+  //تغير حجم الصوره اذا تغيرت الشاشة
+  for (n=1;n<13;n++){
+     var ph = document.getElementById("img"+n);
+        ph.width = 0.13*ww;
+        ph.height=0.13*hh;
+
+        var b=document.getElementById("bb")
+        b.style.marginLeft=3*ww/10+"px";
+       }
+       };
+
+ //الحجم واللون المبدأي للقطاع والجدول عند تحميل الصفحه 
+   h=window.innerHeight;
+   w=window.innerWidth;
+   var x = document.getElementById("myTable");
+    x.style.width = "90%";
+    x.style.height="90%"
+    x.style.backgroundColor="#aabbff"
+    x.style.margin="auto";
+    x.style.fontSize=w/40+"px"
+ //خصائص القطاع المبدئية
+    var y = document.getElementById("dd");
+    y.style.width =6*w/10+"px";
+    y.style.height=8*h/10+"px";
+    y.style.backgroundColor="rgb(78,88,99)";
+    y.style.margin="auto";
+ //تعين حجم مبدأي للخلايا و للصوره حسب حجم الجدول
+  
+   
+ //حجم الصورة
+  for (z=1;z<13;z++){ 
+  var x = document.getElementById("img"+z);
+  x.width = 0.13*w;
+  x.height=0.13*h;};
+  //خصائص الزر
+  var b=document.getElementById("bb")
+  b.style.marginLeft=3*w/10+"px";
+  //الضغط على الزر
+   b.onclick =function(){
+    var r=Math.floor((Math.random() * 22)+1);
+    var m=Math.floor((Math.random() * 12)+1);
+   for (v=1;v<=m;v++){
+    var x = document.getElementById("img"+v);
+   
+    x.src="face/a"+r+".jpg"
+   }
+
+   }
+</script>
+
+
+</body>
+</html>
